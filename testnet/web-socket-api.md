@@ -85,15 +85,15 @@
 
 # Public WebSocket API for Binance SPOT Testnet
 
-**Last Updated: 2024-11-27**
+**Last Updated: 2025-02-05**
 
 ## General API Information
 
 * The base endpoint is: **`wss://testnet.binance.vision/ws-api/v3`**
   * If you experience issues with the standard 443 port, alternative port 9443 is also available.
 * A single connection to the API is only valid for 24 hours; expect to be disconnected after the 24-hour mark.
-* Websocket server will send a `ping frame` every 3 minutes.
-  * If the websocket server does not receive a `pong frame` back from the connection within a 10 minute period, the connection will be disconnected.
+* The websocket server will send a `ping frame` every 20 seconds.
+  * If the websocket server does not receive a `pong frame` back from the connection within a minute, the connection will be disconnected.
   * When you receive a ping, you must send a pong with a copy of ping's payload as soon as possible.
   * Unsolicited `pong frames` are allowed, but will not prevent disconnection. **It is recommended that the payload for these pong frames are empty.**
 * Lists are returned in **chronological order**, unless noted otherwise.
